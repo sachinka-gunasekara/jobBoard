@@ -9,9 +9,19 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        p: {
+          100: "var(--color-primary-100)",
+          200: "var(--color-primary-200)",
+        },
+        error: {
+          100: "var(--color-error-100)",
+          200: "var(--color-error-200)",
+        },
         background: "var(--background)",
-        foreground: "var(--foreground)",
       },
+      borderRadius: {
+        DEFAULT: '10px',
+      }
     },
   },
   plugins: [],
