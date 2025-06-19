@@ -8,12 +8,14 @@ import Image from "next/image";
 import backgroundImage from "../../public/assets/banner1.jpg"; 
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
+import { useAuth } from "@/app/context/AuthContext";
 
 export default function JobDetailPage() {
   const { id } = useParams(); // returns { id: 'job-id' }
   const router = useRouter();
   const { jobs } = useJobs();
   const [applied, setApplied] = useState(false);
+  const { role } = useAuth();
 
   const job = jobs.find((job) => job.id === id);
 
@@ -55,12 +57,14 @@ export default function JobDetailPage() {
                         <div className="text-xs bg-p-100 rounded-[100px] text-white w-max px-4 py-1">{job.type}</div>
                     </div>
 
+                      {role === "user" && (
                     <div className="flex flex-col">
                         <button onClick={() => setApplied(true)} className="px-4 py-2 bg-p-100 text-white rounded hover:bg-p-200-hover">
                             Apply Now
                         </button>
                         {applied && <p className="text-green-600 mt-2">Application sent!</p>}
                     </div>
+                    )}
                 </div>
 
             <p className="text-lg">{job.company}</p>

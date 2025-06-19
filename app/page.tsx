@@ -13,9 +13,9 @@ export default function Home() {
         <p className="text-lg text-s-100 line-clamp-2">
           Discover your next opportunity. Browse available jobs or post a new one to help connect great companies with amazing talent.
         </p>
-        <Link href="/jobList">
+        <Link href="/login">
           <button className="mt-2 px-6 py-3 bg-p-100 text-white rounded-md hover:bg-p-200-hover transition">
-            Browse Jobs
+            Login to Browse Jobs
           </button>
         </Link>
       </div>
